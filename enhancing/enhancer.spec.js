@@ -54,11 +54,13 @@ describe('the fail(item) method', () => {
 
   it('confirm enhancement level decreases by 1 if it is greater than 16',
     () => {
-      // Test decrease
       item.enhancement = 18
       expect(fail(item).enhancement).toBe(17)
-      
-      // Test waiver
+    }
+  )
+
+  it('confirm enhancement level does NOT decrease if level is less than or equal to 16',
+    () => {
       item.enhancement = 7
       expect(fail(item).enhancement).toBe(7)
     }
